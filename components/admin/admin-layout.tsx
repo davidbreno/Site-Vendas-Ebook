@@ -13,6 +13,7 @@ import {
   MessageSquare,
   Settings,
   FileText,
+  Home,
   LogOut,
   Menu,
   X
@@ -65,6 +66,14 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
                 </Link>
               )
             })}
+            <Link
+              href="/"
+              className="flex items-center space-x-3 px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              onClick={() => setSidebarOpen(false)}
+            >
+              <Home className="h-5 w-5" />
+              <span>Voltar ao site</span>
+            </Link>
           </nav>
         </div>
       </div>
@@ -90,7 +99,17 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
               )
             })}
           </nav>
-          <div className="p-4 border-t">
+          <div className="p-4 border-t space-y-2">
+            <Button
+              variant="outline"
+              className="w-full justify-start"
+              asChild
+            >
+              <Link href="/">
+                <Home className="h-4 w-4 mr-2" />
+                Voltar ao site
+              </Link>
+            </Button>
             <Button
               variant="outline"
               className="w-full justify-start"

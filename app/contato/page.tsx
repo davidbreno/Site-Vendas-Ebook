@@ -62,7 +62,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-cream">Email</p>
-                  <p>contato@marcaemente.com</p>
+                  <p>david.breno2013@hotmail.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

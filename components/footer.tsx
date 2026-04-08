@@ -26,7 +26,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
               <img
-                src="/logo.png"
+                src="/logo-color.png"
                 alt="Marca & Mente Studio"
                 className="h-16 w-auto sm:h-20"
               />
@@ -57,7 +57,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contato@marcaemente.com"
+                href="mailto:david.breno2013@hotmail.com"
                 className="w-10 h-10 bg-gold/10 border border-gold/20 rounded-full flex items-center justify-center text-gold hover:bg-gold/20 hover:border-gold/40 transition-all duration-300"
                 aria-label="Email"
               >

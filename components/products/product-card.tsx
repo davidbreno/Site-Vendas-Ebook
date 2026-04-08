@@ -30,7 +30,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <article className="group bg-cream border border-gold/25 rounded-2xl overflow-hidden hover:border-gold/30 transition-all duration-500">
-      <div className="relative h-56 bg-gradient-to-br from-cream to-white p-6 flex items-center justify-center">
+      <div className="relative h-56 bg-gradient-to-br from-cream/60 to-white p-6 flex items-center justify-center">
         {product.imageUrl && !imageError ? (
           <img
             src={product.imageUrl}
@@ -43,7 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
             onError={() => setImageError(true)}
           />
         ) : null}
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-navy/40 to-transparent" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-navy/15 to-transparent" />
         
         {product.badge && (
           <span className="absolute top-4 left-4 z-20 bg-gold text-navy text-xs font-semibold px-3 py-1 rounded-full">

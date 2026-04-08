@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, MessageCircle, ShoppingCart } from "lucide-react"
+import { Menu, X, MessageCircle, ShoppingCart, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import dynamic from "next/dynamic"
 import { getWhatsappLink } from "@/lib/whatsapp"
@@ -79,6 +79,9 @@ export function Header() {
   const navHover = "hover:text-gold"
   const iconText = isScrolled ? "text-navy/80" : "text-white/90"
   const logoSrc = isScrolled ? "/logo-color.png" : "/logo-white.png"
+  const adminButtonClass = isScrolled
+    ? "border-navy/30 text-navy hover:bg-navy/5 hover:border-navy/50"
+    : "border-white/40 text-white hover:bg-white/10 hover:border-white/70"
 
   return (
     <header
@@ -111,6 +114,16 @@ export function Header() {
 
           {/* Desktop CTA and Cart */}
           <div className="hidden md:flex items-center gap-4">
+            <Button
+              variant="outline"
+              className={`rounded-full px-5 py-2 flex items-center gap-2 ${adminButtonClass}`}
+              asChild
+            >
+              <Link href="/admin">
+                <Shield className="w-4 h-4" />
+                Admin
+              </Link>
+            </Button>
             <CartIcon className={iconText} />
 
             <Button
@@ -153,6 +166,15 @@ export function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className={`${navText} ${navHover}`}
               />
+
+              <Link
+                href="/admin"
+                onClick={() => setIsMenuOpen(false)}
+                className={`${navText} ${navHover} transition-colors duration-300 text-lg py-2 flex items-center gap-3`}
+              >
+                <Shield className="w-5 h-5" />
+                Admin
+              </Link>
 
               <Button
                 className="bg-gold hover:bg-gold/90 text-navy font-medium px-6 py-3 rounded-full flex items-center justify-center gap-2 mt-4"
