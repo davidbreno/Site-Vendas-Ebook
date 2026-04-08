@@ -10,16 +10,13 @@ async function checkAuth() {
 
 export async function POST(
   _request: NextRequest,
-  { params }: { params: { id?: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   if (!(await checkAuth())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const rawId =
-    params?.id ||
-    _request.nextUrl.pathname.split('/').slice(-2, -1)[0] ||
-    ''
+  const { id: rawId } = await params
   const id = Number.parseInt(String(rawId), 10)
   if (!id || Number.isNaN(id)) {
     return NextResponse.json({ error: 'ID inválido.' }, { status: 400 })

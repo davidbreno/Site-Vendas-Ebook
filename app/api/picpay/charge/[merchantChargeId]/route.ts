@@ -13,9 +13,9 @@ type ChargeResponse = {
 
 export async function GET(
   _request: NextRequest,
-  { params }: { params: { merchantChargeId?: string } }
+  { params }: { params: Promise<{ merchantChargeId: string }> }
 ) {
-  const merchantChargeId = params.merchantChargeId
+  const { merchantChargeId } = await params
   if (!merchantChargeId) {
     return NextResponse.json({ error: 'Identificador inválido.' }, { status: 400 })
   }
