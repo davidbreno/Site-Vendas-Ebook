@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String
+  slug        String    @unique
+  description String?
+  isActive    Boolean   @default(true) // Added for category status
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id            Int       @id @default(autoincrement())
+  title         String
+  slug          String    @unique
+  description   String
+  originalPrice Decimal?
+  price         Decimal
+  category      Category? @relation(fields: [categoryId], references: [id])
+  categoryId    Int?
+  badge         String?
+  featured      Boolean   @default(false)
+  image         String?
+  imageUrl      String?   // Added for product images
+  downloadUrl   String?   // Added for downloadable products
+  benefits      String?  // Added for product benefits (comma-separated)
+  isActive      Boolean   @default(true) // Added for product status
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Service {
+  id            Int       @id @default(autoincrement())
+  title         String
+  slug          String    @unique
+  description   String
+  startingPrice String
+  delivery      String
+  featured      Boolean   @default(false)
+  isActive      Boolean   @default(true) // Added for service status
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Testimonial {
+  id          Int      @id @default(autoincrement())
+  name        String
+  company     String?  // Changed from role to company
+  content     String   // Changed from testimonial to content
+  rating      Int
+  isActive    Boolean  @default(true) // Added for testimonial status
+  createdAt   DateTime @default(now())
+}
+
+model SiteSettings {
+  id              Int      @id @default(autoincrement())
+  siteName        String   @default("Marca & Mente Studio")
+  siteDescription String   @default("Plataforma premium com ebooks, sistemas de branding e soluções criativas personalizadas.")
+  contactEmail    String   @default("contato@marcamente.com")
+  contactPhone    String?
+  whatsappNumber  String?
+  address         String?
+  facebookUrl     String?
+  instagramUrl    String?
+  linkedinUrl     String?
+  maintenanceMode Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model CustomRequest {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String
+  phone       String
+  serviceType String   // Added service type field
+  budget      String?  // Added budget field
+  message     String
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+}
+
+model Order {
+  id             Int         @id @default(autoincrement())
+  customerName   String
+  customerEmail  String
+  customerPhone  String
+  items          OrderItem[]
+  total          Decimal
+  paymentMethod  String      // pix, card, mercado-pago
+  paymentStatus  String      @default("pending") // pending, completed, failed, cancelled
+  orderStatus    String      @default("processing") // processing, shipped, delivered, cancelled
+  paymentId      String?     // External payment gateway ID
+  notes          String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId   Int
+  productId Int
+  title     String  // Store product title for historical purposes
+  price     Decimal // Store price at time of purchase
+  quantity  Int     @default(1)
+}

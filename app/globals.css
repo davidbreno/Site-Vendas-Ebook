@@ -1,0 +1,144 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Marca & Mente Premium Color Palette */
+  --background: #10232B;
+  --foreground: #F4EEE8;
+  --card: #20343C;
+  --card-foreground: #F4EEE8;
+  --popover: #20343C;
+  --popover-foreground: #F4EEE8;
+  --primary: #C8A96B;
+  --primary-foreground: #10232B;
+  --secondary: #20343C;
+  --secondary-foreground: #F4EEE8;
+  --muted: #20343C;
+  --muted-foreground: #7B8487;
+  --accent: #C8A96B;
+  --accent-foreground: #10232B;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: #2A444E;
+  --input: #20343C;
+  --ring: #C8A96B;
+  --chart-1: #C8A96B;
+  --chart-2: #7B8487;
+  --chart-3: #20343C;
+  --chart-4: #F4EEE8;
+  --chart-5: #10232B;
+  --radius: 0.625rem;
+  
+  /* Custom luxury colors */
+  --gold: #C8A96B;
+  --navy: #10232B;
+  --navy-light: #20343C;
+  --cream: #F4EEE8;
+  --gray: #7B8487;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans), 'Inter', system-ui, sans-serif;
+  --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
+  --font-mono: 'Geist Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom luxury colors for Tailwind */
+  --color-gold: var(--gold);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-cream: var(--cream);
+  --color-gray-muted: var(--gray);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(200, 169, 107, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(200, 169, 107, 0.5);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
