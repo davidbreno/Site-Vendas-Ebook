@@ -11,11 +11,22 @@ function normalizeDownloadUrl(value: string | null) {
   if (!value) return null
   const trimmed = value.trim()
   if (!trimmed) return null
+  const siteUrl = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL
   if (/^https?:\/\//i.test(trimmed)) {
+    if (siteUrl) {
+      try {
+        const url = new URL(trimmed)
+        if (url.hostname.includes('netlify.app')) {
+          const base = new URL(siteUrl)
+          return `${base.origin}${url.pathname}${url.search}${url.hash}`
+        }
+      } catch {
+        return trimmed
+      }
+    }
     return trimmed
   }
   if (trimmed.startsWith('/')) {
-    const siteUrl = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL
     if (!siteUrl) {
       return null
     }
