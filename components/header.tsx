@@ -78,6 +78,7 @@ export function Header() {
   const navText = isScrolled ? "text-navy/80" : "text-white/90"
   const navHover = "hover:text-gold"
   const iconText = isScrolled ? "text-navy/80" : "text-white/90"
+  const logoSrc = isScrolled ? "/logo-color.png" : "/logo-white.png"
 
   return (
     <header
@@ -89,7 +90,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/logo.png"
+              src={logoSrc}
               alt="Marca & Mente Studio"
               className="h-[72px] w-auto sm:h-[84px]"
             />
