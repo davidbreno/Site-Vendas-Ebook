@@ -5,13 +5,17 @@ import { ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useCart } from "@/components/cart/cart-context"
 
-export function CartIcon() {
+interface CartIconProps {
+  className?: string
+}
+
+export function CartIcon({ className }: CartIconProps) {
   const { state } = useCart()
 
   return (
     <Button
       variant="ghost"
-      className="relative text-cream hover:text-gold hover:bg-gold/10 p-2"
+      className={`relative hover:text-gold hover:bg-gold/10 p-2 ${className ?? "text-cream"}`}
       asChild
     >
       <Link href="/cart">

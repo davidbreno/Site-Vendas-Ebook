@@ -5,38 +5,38 @@
 
 :root {
   /* Marca & Mente Premium Color Palette */
-  --background: #10232B;
-  --foreground: #F4EEE8;
-  --card: #20343C;
-  --card-foreground: #F4EEE8;
-  --popover: #20343C;
-  --popover-foreground: #F4EEE8;
-  --primary: #C8A96B;
-  --primary-foreground: #10232B;
-  --secondary: #20343C;
-  --secondary-foreground: #F4EEE8;
-  --muted: #20343C;
-  --muted-foreground: #7B8487;
-  --accent: #C8A96B;
-  --accent-foreground: #10232B;
+  --background: #FFFFFF;
+  --foreground: #2F4156;
+  --card: #F5EFEB;
+  --card-foreground: #2F4156;
+  --popover: #F5EFEB;
+  --popover-foreground: #2F4156;
+  --primary: #567C8D;
+  --primary-foreground: #F5EFEB;
+  --secondary: #C8D9E6;
+  --secondary-foreground: #2F4156;
+  --muted: #F5EFEB;
+  --muted-foreground: #567C8D;
+  --accent: #2F4156;
+  --accent-foreground: #F5EFEB;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #2A444E;
-  --input: #20343C;
-  --ring: #C8A96B;
-  --chart-1: #C8A96B;
-  --chart-2: #7B8487;
-  --chart-3: #20343C;
-  --chart-4: #F4EEE8;
-  --chart-5: #10232B;
+  --border: #C8D9E6;
+  --input: #FFFFFF;
+  --ring: #567C8D;
+  --chart-1: #567C8D;
+  --chart-2: #2F4156;
+  --chart-3: #C8D9E6;
+  --chart-4: #F5EFEB;
+  --chart-5: #FFFFFF;
   --radius: 0.625rem;
   
   /* Custom luxury colors */
-  --gold: #C8A96B;
-  --navy: #10232B;
-  --navy-light: #20343C;
-  --cream: #F4EEE8;
-  --gray: #7B8487;
+  --gold: #C8A26E;
+  --navy: #2F4156;
+  --navy-light: #567C8D;
+  --cream: #F5EFEB;
+  --gray: #C8D9E6;
 }
 
 @theme inline {
@@ -86,6 +86,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    position: relative;
+  }
+
+  body::before {
+    content: none;
+  }
+
+  body > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -112,12 +122,94 @@
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(200, 169, 107, 0.3);
+    box-shadow: 0 0 20px rgba(86, 124, 141, 0.25);
   }
   50% {
-    box-shadow: 0 0 40px rgba(200, 169, 107, 0.5);
+    box-shadow: 0 0 40px rgba(86, 124, 141, 0.45);
   }
 }
+
+@keyframes flake-rise {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-220px);
+    opacity: 0;
+  }
+}
+
+.hero-flake {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.75);
+  filter: blur(3px);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+  animation-name: flake-rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+}
+
+@keyframes fog-drift {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1.05);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate3d(2%, 1%, 0) scale(1.1);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(-2%, -1%, 0) scale(1.05);
+    opacity: 0.45;
+  }
+}
+
+@keyframes fog-drift-reverse {
+  0% {
+    transform: translate3d(2%, 1%, 0) scale(1.08);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate3d(-2%, -1%, 0) scale(1.12);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(2%, 1%, 0) scale(1.08);
+    opacity: 0.4;
+  }
+}
+
+.fog-layer {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(60% 40% at 20% 30%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(50% 35% at 80% 60%, rgba(245, 239, 235, 0.3) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(40% 30% at 40% 80%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 55%);
+  filter: blur(50px);
+  animation: fog-drift 32s ease-in-out infinite;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.fog-layer.fog-2 {
+  background:
+    radial-gradient(55% 35% at 70% 25%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(45% 30% at 25% 70%, rgba(245, 239, 235, 0.25) 0%, rgba(255, 255, 255, 0) 55%);
+  filter: blur(60px);
+  animation: fog-drift-reverse 38s ease-in-out infinite;
+  opacity: 0.25;
+}
+
 
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;

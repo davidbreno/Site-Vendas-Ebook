@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { PenTool, Layers, BookOpen, Instagram, FileText, Globe, Clock, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -50,8 +50,8 @@ const services = [
 
 export function Services() {
   return (
-    <section id="personalizado" className="relative py-24 lg:py-32 bg-navy">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-light/10 to-transparent" />
+    <section id="personalizado" className="relative py-24 lg:py-32 bg-white">
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/60 to-white" />
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,10 +60,10 @@ export function Services() {
           <span className="text-gold text-sm font-medium tracking-widest uppercase">
             Serviços Personalizados
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream mt-4 text-balance">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy mt-4 text-balance">
             Seu projeto, nossa criatividade
           </h2>
-          <p className="text-cream/60 text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-navy/70 text-lg mt-4 max-w-2xl mx-auto">
             Soluções exclusivas criadas sob medida para elevar sua marca ao próximo nível.
           </p>
         </div>
@@ -73,7 +73,7 @@ export function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-navy-light/50 border border-gold/10 rounded-2xl p-8 hover:border-gold/30 hover:bg-navy-light/80 transition-all duration-500 animate-fade-in-up"
+              className="group relative bg-cream border border-gold/25 rounded-2xl p-8 hover:border-gold/30 hover:bg-cream/80 transition-all duration-500 animate-fade-in-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
@@ -82,22 +82,22 @@ export function Services() {
               </div>
 
               {/* Content */}
-              <h3 className="text-cream font-semibold text-xl mb-3 group-hover:text-gold transition-colors">
+              <h3 className="text-navy font-semibold text-xl mb-3 group-hover:text-gold transition-colors">
                 {service.title}
               </h3>
-              <p className="text-cream/60 text-sm leading-relaxed mb-6">
+              <p className="text-navy/70 text-sm leading-relaxed mb-6">
                 {service.description}
               </p>
 
               {/* Details */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-cream/50">Investimento</span>
+                  <span className="text-navy/60">Investimento</span>
                   <span className="text-gold font-semibold">{service.startingPrice}</span>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-cream/50">Prazo estimado</span>
-                  <div className="flex items-center gap-1 text-cream/80">
+                  <span className="text-navy/60">Prazo estimado</span>
+                  <div className="flex items-center gap-1 text-navy/80">
                     <Clock className="w-3.5 h-3.5" />
                     {service.delivery}
                   </div>
@@ -108,7 +108,7 @@ export function Services() {
               <Button
                 asChild
                 variant="outline"
-                className="w-full border-gold/30 text-cream hover:bg-gold/10 hover:border-gold/50 rounded-full flex items-center justify-center gap-2 group-hover:border-gold/50"
+                className="w-full border-navy/25 bg-cream text-navy hover:bg-cream/90 hover:border-navy/40 rounded-full flex items-center justify-center gap-2 group-hover:border-navy/40"
               >
                 <a href="/contato">
                   Solicitar orçamento
@@ -122,3 +122,4 @@ export function Services() {
     </section>
   )
 }
+

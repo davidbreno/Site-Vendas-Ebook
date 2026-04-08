@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+﻿import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
 const smtpHost = process.env.SMTP_HOST

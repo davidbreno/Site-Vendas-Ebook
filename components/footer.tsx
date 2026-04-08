@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Instagram, Mail, MessageCircle, CreditCard, Shield, Lock } from "lucide-react"
 import { getWhatsappLink } from "@/lib/whatsapp"
@@ -19,7 +19,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer id="contato" className="relative bg-navy-light border-t border-gold/10">
+    <footer id="contato" className="relative bg-white border-t border-gold/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -31,7 +31,7 @@ export function Footer() {
                 className="h-16 w-auto sm:h-20"
               />
             </div>
-            <p className="text-cream/60 leading-relaxed max-w-md mb-6">
+            <p className="text-navy/70 leading-relaxed max-w-md mb-6">
               Transformando ideias em marcas premium. Ebooks, design e soluções criativas 
               para empreendedores que buscam excelência e resultados reais no digital.
             </p>
@@ -68,13 +68,13 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-cream font-semibold mb-6">Links Rápidos</h4>
+            <h4 className="text-navy font-semibold mb-6">Links Rápidos</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-cream/60 hover:text-gold transition-colors duration-300"
+                    className="text-navy/70 hover:text-gold transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -85,13 +85,13 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-cream font-semibold mb-6">Legal</h4>
+            <h4 className="text-navy font-semibold mb-6">Legal</h4>
             <ul className="space-y-3">
               {legalLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-cream/60 hover:text-gold transition-colors duration-300"
+                    className="text-navy/70 hover:text-gold transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -102,20 +102,20 @@ export function Footer() {
         </div>
 
         {/* Payment & Security */}
-        <div className="mt-12 pt-8 border-t border-gold/10">
+        <div className="mt-12 pt-8 border-t border-gold/25">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Payment Methods */}
             <div className="flex items-center gap-4">
-              <span className="text-cream/50 text-sm">Formas de pagamento:</span>
+              <span className="text-navy/60 text-sm">Formas de pagamento:</span>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-6 bg-cream/10 rounded flex items-center justify-center">
-                  <CreditCard className="w-5 h-3 text-cream/60" />
+                  <CreditCard className="w-5 h-3 text-navy/70" />
                 </div>
-                <div className="w-10 h-6 bg-cream/10 rounded flex items-center justify-center text-cream/60 text-xs font-bold">
+                <div className="w-10 h-6 bg-cream/10 rounded flex items-center justify-center text-navy/70 text-xs font-bold">
                   PIX
                 </div>
                 <div className="w-10 h-6 bg-cream/10 rounded flex items-center justify-center">
-                  <svg className="w-6 h-4 text-cream/60" viewBox="0 0 24 16" fill="currentColor">
+                  <svg className="w-6 h-4 text-navy/70" viewBox="0 0 24 16" fill="currentColor">
                     <rect width="24" height="16" rx="2" fill="currentColor" opacity="0.3" />
                     <circle cx="9" cy="8" r="4" fill="currentColor" opacity="0.5" />
                     <circle cx="15" cy="8" r="4" fill="currentColor" opacity="0.5" />
@@ -125,7 +125,7 @@ export function Footer() {
             </div>
 
             {/* Security Badges */}
-            <div className="flex items-center gap-6 text-cream/50 text-sm">
+            <div className="flex items-center gap-6 text-navy/60 text-sm">
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-gold" />
                 Site seguro
@@ -140,10 +140,10 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="mt-8 text-center">
-          <p className="text-cream/40 text-sm">
+          <p className="text-navy/50 text-sm">
             © {new Date().getFullYear()} Marca & Mente Studio. Todos os direitos reservados.
           </p>
-          <p className="text-cream/40 text-sm mt-2">
+          <p className="text-navy/50 text-sm mt-2">
             CNPJ: 66.130.811/0001-15
           </p>
         </div>
@@ -151,3 +151,4 @@ export function Footer() {
     </footer>
   )
 }
+

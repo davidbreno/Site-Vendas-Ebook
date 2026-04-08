@@ -29,8 +29,8 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <article className="group bg-navy border border-gold/10 rounded-2xl overflow-hidden hover:border-gold/30 transition-all duration-500">
-      <div className="relative h-56 bg-gradient-to-br from-navy-light to-navy p-6">
+    <article className="group bg-cream border border-gold/25 rounded-2xl overflow-hidden hover:border-gold/30 transition-all duration-500">
+      <div className="relative h-56 bg-gradient-to-br from-cream to-white p-6">
         {product.imageUrl && !imageError ? (
           <img
             src={product.imageUrl}
@@ -43,7 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
             onError={() => setImageError(true)}
           />
         ) : null}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
         
         {product.badge && (
           <span className="absolute top-4 left-4 bg-gold text-navy text-xs font-semibold px-3 py-1 rounded-full">
@@ -51,7 +51,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </span>
         )}
 
-        <span className="absolute top-4 right-4 bg-navy-light/80 text-cream/80 text-xs px-3 py-1 rounded-full border border-gold/20">
+        <span className="absolute top-4 right-4 bg-white/80 text-navy/70 text-xs px-3 py-1 rounded-full border border-gold/20">
           {product.category?.name ?? 'Produto'}
         </span>
 
@@ -59,29 +59,29 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-32 h-40 bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-lg shadow-2xl transform group-hover:scale-105 group-hover:-translate-y-2 transition-transform duration-500">
             <div className="p-4 space-y-2">
               <div className="h-2 bg-gold/40 rounded w-3/4" />
-              <div className="h-1.5 bg-cream/20 rounded w-full" />
-              <div className="h-1.5 bg-cream/20 rounded w-2/3" />
-              <div className="h-1.5 bg-cream/20 rounded w-4/5" />
+                <div className="h-1.5 bg-navy/10 rounded w-full" />
+                <div className="h-1.5 bg-navy/10 rounded w-2/3" />
+                <div className="h-1.5 bg-navy/10 rounded w-4/5" />
             </div>
           </div>
         )}
       </div>
 
       <div className="p-6 space-y-4">
-        <h3 className="text-cream font-semibold text-lg group-hover:text-gold transition-colors">
+        <h3 className="text-navy font-semibold text-lg group-hover:text-gold transition-colors">
           {product.title}
         </h3>
-        <p className="text-cream/60 text-sm leading-relaxed">{product.description}</p>
+        <p className="text-navy/70 text-sm leading-relaxed">{product.description}</p>
 
         <div className="flex items-center gap-3">
           <span className="text-gold text-2xl font-bold">{product.price}</span>
-          <span className="text-cream/40 text-sm line-through">{product.originalPrice}</span>
+          <span className="text-navy/40 text-sm line-through">{product.originalPrice}</span>
         </div>
 
         <div className="flex gap-3 pt-2 flex-col sm:flex-row">
           <Button
             variant="outline"
-            className="w-full sm:flex-1 border-gold/30 text-cream hover:bg-gold/10 hover:border-gold/50 rounded-full flex items-center justify-center gap-2"
+            className="w-full sm:flex-1 border-navy/25 bg-cream text-navy hover:bg-cream/90 hover:border-navy/40 rounded-full flex items-center justify-center gap-2"
             onClick={handleAddToCart}
           >
             <ShoppingCart className="w-4 h-4" />

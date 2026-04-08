@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, type FormEvent } from 'react'
 import Link from 'next/link'
@@ -100,13 +100,13 @@ export default function ContactPage() {
             </Link>
           </div>
 
-          <div className="rounded-3xl border border-gold/10 bg-navy-light p-8 shadow-xl shadow-black/20">
+          <div className="rounded-3xl border border-gold/25 bg-navy-light p-8 shadow-xl shadow-black/20">
             <h2 className="text-2xl font-semibold text-cream mb-6">Solicitar orçamento</h2>
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-cream/80 text-sm font-medium mb-2">Nome completo</label>
                 <input
-                  className="w-full rounded-2xl border border-gold/10 bg-navy px-4 py-3 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:outline-none"
+                  className="w-full rounded-2xl border border-gold/25 bg-navy px-4 py-3 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:outline-none"
                   placeholder="Seu nome"
                   type="text"
                   value={formData.name}
@@ -117,7 +117,7 @@ export default function ContactPage() {
               <div>
                 <label className="block text-cream/80 text-sm font-medium mb-2">Email</label>
                 <input
-                  className="w-full rounded-2xl border border-gold/10 bg-navy px-4 py-3 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:outline-none"
+                  className="w-full rounded-2xl border border-gold/25 bg-navy px-4 py-3 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:outline-none"
                   placeholder="seu@email.com"
                   type="email"
                   value={formData.email}
@@ -128,7 +128,7 @@ export default function ContactPage() {
               <div>
                 <label className="block text-cream/80 text-sm font-medium mb-2">WhatsApp</label>
                 <input
-                  className="w-full rounded-2xl border border-gold/10 bg-navy px-4 py-3 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:outline-none"
+                  className="w-full rounded-2xl border border-gold/25 bg-navy px-4 py-3 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:outline-none"
                   placeholder="(11) 99999-9999"
                   type="tel"
                   value={formData.phone}
@@ -139,7 +139,7 @@ export default function ContactPage() {
               <div>
                 <label className="block text-cream/80 text-sm font-medium mb-2">Mensagem</label>
                 <textarea
-                  className="w-full min-h-[160px] rounded-3xl border border-gold/10 bg-navy px-4 py-3 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:outline-none"
+                  className="w-full min-h-[160px] rounded-3xl border border-gold/25 bg-navy px-4 py-3 text-cream placeholder:text-cream/40 focus:border-gold/50 focus:outline-none"
                   placeholder="Descreva seu projeto ou solicitação"
                   value={formData.message}
                   onChange={(event) => setFormData({ ...formData, message: event.target.value })}

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -184,7 +184,7 @@ export default function CheckoutPage() {
           {/* Checkout Form */}
           <div className="space-y-8">
             {/* Customer Information */}
-            <div className="bg-navy-light border border-gold/10 rounded-2xl p-8">
+            <div className="bg-navy-light border border-gold/25 rounded-2xl p-8">
               <h2 className="font-serif text-2xl text-cream mb-6">Informações pessoais</h2>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -255,7 +255,7 @@ export default function CheckoutPage() {
             </div>
 
             {/* Payment Method */}
-            <div className="bg-navy-light border border-gold/10 rounded-2xl p-8">
+            <div className="bg-navy-light border border-gold/25 rounded-2xl p-8">
               <h2 className="font-serif text-2xl text-cream mb-6">Forma de pagamento</h2>
 
               <div className="flex items-center gap-4 p-4 border border-gold/20 rounded-lg">
@@ -272,7 +272,7 @@ export default function CheckoutPage() {
 
           {/* Order Summary */}
           <div className="lg:sticky lg:top-6 h-fit">
-            <div className="bg-navy-light border border-gold/10 rounded-2xl p-8">
+            <div className="bg-navy-light border border-gold/25 rounded-2xl p-8">
               <h2 className="font-serif text-2xl text-cream mb-6">Resumo do pedido</h2>
 
               <div className="space-y-4 mb-6">
@@ -290,7 +290,7 @@ export default function CheckoutPage() {
                   </div>
                 ))}
 
-                <div className="border-t border-gold/10 pt-4 space-y-2">
+                <div className="border-t border-gold/25 pt-4 space-y-2">
                   <div className="flex justify-between text-cream/80">
                     <span>Subtotal</span>
                     <span>{formatPrice(state.total)}</span>
@@ -299,7 +299,7 @@ export default function CheckoutPage() {
                     <span>Frete</span>
                     <span className="text-green-400">Grátis</span>
                   </div>
-                  <div className="border-t border-gold/10 pt-2">
+                  <div className="border-t border-gold/25 pt-2">
                     <div className="flex justify-between text-cream font-semibold text-xl">
                       <span>Total</span>
                       <span>{formatPrice(state.total)}</span>

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ProductCard } from '@/components/products/product-card'
 import type { SerializedProduct } from '@/lib/shop'
@@ -9,8 +9,8 @@ interface ProductsProps {
 
 export function Products({ products }: ProductsProps) {
   return (
-    <section className="relative py-24 lg:py-32 bg-navy-light">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy to-navy-light" />
+    <section className="relative py-24 lg:py-32 bg-white">
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/70 to-white" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -18,10 +18,10 @@ export function Products({ products }: ProductsProps) {
           <span className="text-gold text-sm font-medium tracking-widest uppercase">
             Produtos em Destaque
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream mt-4 text-balance">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy mt-4 text-balance">
             Sua vitrine de produtos premium
           </h2>
-          <p className="text-cream/60 text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-navy/70 text-lg mt-4 max-w-2xl mx-auto">
             Ebooks, planners e kits digitais desenvolvidos para impulsionar seu negócio.
           </p>
         </div>
@@ -40,7 +40,7 @@ export function Products({ products }: ProductsProps) {
           <Button
             size="lg"
             variant="outline"
-            className="border-gold/30 text-cream hover:bg-gold/10 hover:border-gold/50 px-8 py-6 rounded-full"
+            className="border-navy/25 bg-cream text-navy hover:bg-cream/90 hover:border-navy/40 px-8 py-6 rounded-full"
             asChild
           >
             <Link href="/products">Ver todos os produtos</Link>
@@ -50,3 +50,4 @@ export function Products({ products }: ProductsProps) {
     </section>
   )
 }
+

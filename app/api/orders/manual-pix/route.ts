@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+﻿import { NextRequest, NextResponse } from 'next/server'
 import { randomUUID } from 'crypto'
 import nodemailer from 'nodemailer'
 import { Prisma } from '@prisma/client'

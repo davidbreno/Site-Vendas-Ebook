@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import Link from 'next/link'
 import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft } from 'lucide-react'
@@ -66,7 +66,7 @@ export default function CartPage() {
             {state.items.map((item) => (
               <div
                 key={item.product.id}
-                className="bg-navy-light border border-gold/10 rounded-2xl p-6"
+                className="bg-navy-light border border-gold/25 rounded-2xl p-6"
               >
                 <div className="flex gap-6">
                   {/* Product Image */}
@@ -130,7 +130,7 @@ export default function CartPage() {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-navy-light border border-gold/10 rounded-2xl p-6 sticky top-6">
+            <div className="bg-navy-light border border-gold/25 rounded-2xl p-6 sticky top-6">
               <h2 className="font-serif text-2xl text-cream mb-6">Resumo do pedido</h2>
 
               <div className="space-y-4 mb-6">
@@ -142,7 +142,7 @@ export default function CartPage() {
                   <span>Frete</span>
                   <span className="text-green-400">Grátis</span>
                 </div>
-                <div className="border-t border-gold/10 pt-4">
+                <div className="border-t border-gold/25 pt-4">
                   <div className="flex justify-between text-cream font-semibold text-lg">
                     <span>Total</span>
                     <span>{formatPrice(state.total)}</span>
@@ -160,7 +160,7 @@ export default function CartPage() {
               </Button>
 
               <p className="text-cream/50 text-xs text-center mt-4">
-                Compra segura • Entrega digital imediata
+                Compra segura â€¢ Entrega digital imediata
               </p>
             </div>
           </div>

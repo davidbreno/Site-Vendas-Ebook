@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic'
+﻿export const dynamic = 'force-dynamic'
 
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -55,7 +55,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2">
-                <div className="rounded-[2rem] border border-gold/10 bg-navy/70 p-8">
+                <div className="rounded-[2rem] border border-gold/25 bg-navy/70 p-8">
                   <p className="text-cream/60 uppercase tracking-[0.25em] text-xs">Preço</p>
                   <div className="mt-4 flex items-center gap-4">
                     <span className="text-gold text-4xl font-bold">{product.price}</span>
@@ -63,7 +63,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   </div>
                 </div>
 
-                <div className="rounded-[2rem] border border-gold/10 bg-navy/70 p-8">
+                <div className="rounded-[2rem] border border-gold/25 bg-navy/70 p-8">
                   <p className="text-cream/60 uppercase tracking-[0.25em] text-xs">Impulsione seu negócio</p>
                   <p className="text-cream/70 mt-3 text-sm leading-relaxed">
                     Um produto digital premium pensado para gerar mais valor e conversão na sua presença online.
@@ -78,7 +78,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 />
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto border-gold/30 text-cream hover:bg-gold/10 hover:border-gold/50 rounded-full px-8 py-5 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto border-navy/25 bg-cream text-navy hover:bg-cream/90 hover:border-navy/40 rounded-full px-8 py-5 flex items-center justify-center gap-2"
                   asChild
                 >
                   <Link href="/products">
@@ -90,7 +90,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
 
             <div className="space-y-8">
-              <div className="rounded-[2rem] border border-gold/10 bg-navy/70 p-8">
+              <div className="rounded-[2rem] border border-gold/25 bg-navy/70 p-8">
                 <div className="flex items-center justify-between gap-4 mb-6">
                   <div>
                     <p className="text-cream/60 uppercase tracking-[0.25em] text-xs">Principais benefícios</p>
@@ -110,7 +110,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 </div>
               </div>
 
-              <div className="rounded-[2rem] border border-gold/10 bg-navy/70 p-8">
+              <div className="rounded-[2rem] border border-gold/25 bg-navy/70 p-8">
                 <p className="text-cream/60 uppercase tracking-[0.25em] text-xs">Garantia</p>
                 <div className="mt-4 space-y-4 text-cream/70 text-sm leading-relaxed">
                   <p>Compra segura e entrega imediata em formato digital.</p>

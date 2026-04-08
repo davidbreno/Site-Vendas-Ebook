@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+﻿import { NextRequest, NextResponse } from 'next/server'
 import { picpayRequest } from '@/lib/picpay'
 import { handlePaidCharge } from '@/lib/order-fulfillment'
 

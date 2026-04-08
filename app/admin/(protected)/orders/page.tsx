@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
@@ -132,7 +132,7 @@ export default function AdminOrdersPage() {
                   <div>
                     <CardTitle className="text-lg">Pedido #{order.id}</CardTitle>
                     <p className="text-sm text-gray-600 mt-1">
-                      {order.customerName} â€¢ {formatDate(order.createdAt)}
+                      {order.customerName} ââ‚¬¢ {formatDate(order.createdAt)}
                     </p>
                   </div>
                   <div className="flex items-center gap-3">

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { ArrowRight, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -8,7 +8,7 @@ export function FinalCTA() {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-light via-navy to-navy" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cream via-white to-cream" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gold/5 rounded-full blur-2xl" />
       
@@ -23,13 +23,13 @@ export function FinalCTA() {
           </span>
 
           {/* Title */}
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-cream leading-tight text-balance">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-navy leading-tight text-balance">
             Pronto para elevar sua marca e{" "}
             <span className="text-gold">começar a vender no mundo digital?</span>
           </h2>
 
           {/* Description */}
-          <p className="text-cream/70 text-lg sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-navy/70 text-lg sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
             Explore ebooks premium, solicite trabalhos criativos personalizados e transforme 
             sua presença online em uma experiência de vendas profissional.
           </p>
@@ -49,7 +49,7 @@ export function FinalCTA() {
             <Button
               size="lg"
               variant="outline"
-              className="border-gold/30 text-cream hover:bg-gold/10 hover:border-gold/50 px-10 py-6 rounded-full flex items-center gap-2 transition-all duration-300 text-lg"
+              className="border-navy/25 bg-cream text-navy hover:bg-cream/90 hover:border-navy/40 px-10 py-6 rounded-full flex items-center gap-2 transition-all duration-300 text-lg"
               asChild
             >
               <a href={getWhatsappLink()} target="_blank" rel="noopener noreferrer">
@@ -60,7 +60,7 @@ export function FinalCTA() {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-12 text-cream/50 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-12 text-navy/60 text-sm">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -85,3 +85,4 @@ export function FinalCTA() {
     </section>
   )
 }
+

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
@@ -107,7 +107,7 @@ export default function AdminRequestsPage() {
                   <div className="flex-1">
                     <CardTitle className="text-lg">{request.serviceType}</CardTitle>
                     <p className="text-sm text-gray-600 mt-1">
-                      {request.name} • {formatDate(request.createdAt)}
+                      {request.name} â€¢ {formatDate(request.createdAt)}
                     </p>
                   </div>
                   <div className="flex items-center space-x-2">
@@ -172,7 +172,7 @@ export default function AdminRequestsPage() {
                   size="sm"
                   onClick={() => setSelectedRequest(null)}
                 >
-                  ✕
+                  âœ•
                 </Button>
               </div>
 

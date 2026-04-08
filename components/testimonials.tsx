@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { Star, Quote } from "lucide-react"
 
@@ -28,8 +28,8 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative py-24 lg:py-32 bg-navy">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-light/10 to-transparent" />
+    <section className="relative py-24 lg:py-32 bg-white">
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/60 to-white" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -37,10 +37,10 @@ export function Testimonials() {
           <span className="text-gold text-sm font-medium tracking-widest uppercase">
             Depoimentos
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream mt-4 text-balance">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy mt-4 text-balance">
             O que nossos clientes dizem
           </h2>
-          <p className="text-cream/60 text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-navy/70 text-lg mt-4 max-w-2xl mx-auto">
             Histórias reais de empreendedores que transformaram seus negócios com nossos produtos e serviços.
           </p>
         </div>
@@ -50,7 +50,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group relative bg-navy-light/50 border border-gold/10 rounded-2xl p-8 hover:border-gold/30 transition-all duration-500 animate-fade-in-up"
+              className="group relative bg-cream border border-gold/25 rounded-2xl p-8 hover:border-gold/30 transition-all duration-500 animate-fade-in-up"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Quote Icon */}
@@ -66,7 +66,7 @@ export function Testimonials() {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-cream/80 leading-relaxed mb-8 italic">
+              <p className="text-navy/80 leading-relaxed mb-8 italic">
                 &quot;{testimonial.testimonial}&quot;
               </p>
 
@@ -76,8 +76,8 @@ export function Testimonials() {
                   <span className="text-gold font-semibold text-sm">{testimonial.initials}</span>
                 </div>
                 <div>
-                  <div className="text-cream font-semibold">{testimonial.name}</div>
-                  <div className="text-cream/50 text-sm">{testimonial.role}</div>
+                  <div className="text-navy font-semibold">{testimonial.name}</div>
+                  <div className="text-navy/60 text-sm">{testimonial.role}</div>
                 </div>
               </div>
             </div>
@@ -87,3 +87,4 @@ export function Testimonials() {
     </section>
   )
 }
+
