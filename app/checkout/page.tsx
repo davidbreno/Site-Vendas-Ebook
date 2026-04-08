@@ -20,13 +20,13 @@ export default function CheckoutPage() {
     amount: '',
     expires: '15 minutos',
     recipient: '',
+    qrCodeBase64: '',
+    merchantChargeId: '',
   })
   const [checkoutSuccess, setCheckoutSuccess] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [copyMessage, setCopyMessage] = useState('')
   const [apiError, setApiError] = useState('')
-  const pixKey = process.env.NEXT_PUBLIC_PIX_KEY || ''
-  const pixRecipient = process.env.NEXT_PUBLIC_PIX_RECIPIENT || ''
   const supportWhatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ''
 
   const formatPrice = (price: number) => {
@@ -76,13 +76,7 @@ export default function CheckoutPage() {
     }
 
     try {
-      if (!pixKey) {
-        setApiError('PIX não configurado. Informe a chave Pix no sistema.')
-        setIsLoading(false)
-        return
-      }
-
-      const response = await fetch('/api/orders/manual-pix', {
+      const response = await fetch('/api/picpay/charge', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,10 +103,12 @@ export default function CheckoutPage() {
       }
 
       setPixPayload({
-        code: pixKey,
+        code: data.qrCode,
         amount: formatPrice(state.total),
-        expires: 'Após o pagamento',
-        recipient: pixRecipient,
+        expires: '15 minutos',
+        recipient: 'PicPay',
+        qrCodeBase64: data.qrCodeBase64,
+        merchantChargeId: data.merchantChargeId,
       })
       setCheckoutSuccess(true)
       setCopyMessage('')
@@ -336,9 +332,9 @@ export default function CheckoutPage() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <div className="text-cream font-semibold text-lg mb-2">Pedido registrado</div>
-                      <p className="text-cream/70 text-sm mb-4">
-                        Use a chave Pix abaixo para pagar. Depois, envie o comprovante.
-                      </p>
+                  <p className="text-cream/70 text-sm mb-4">
+                    Pague via QR Code Pix. A confirmação é automática.
+                  </p>
                     </div>
                     <div className="rounded-full bg-green-500/10 px-3 py-1 text-green-300 text-xs font-semibold">
                       Seguro</div>
@@ -362,7 +358,18 @@ export default function CheckoutPage() {
                   </div>
 
                   <div className="mt-5 rounded-2xl border border-gold/20 bg-navy-light p-4">
-                    <div className="text-cream font-medium text-sm mb-2">Chave PIX</div>
+                    <div className="text-cream font-medium text-sm mb-2">QR Code Pix</div>
+                    {pixPayload.qrCodeBase64 ? (
+                      <div className="flex justify-center">
+                        <img
+                          src={`data:image/png;base64,${pixPayload.qrCodeBase64}`}
+                          alt="QR Code Pix"
+                          className="h-48 w-48 rounded-xl bg-white p-2"
+                        />
+                      </div>
+                    ) : null}
+
+                    <div className="mt-4 text-cream font-medium text-sm mb-2">Copia e cola</div>
                     <pre className="overflow-x-auto whitespace-pre-wrap break-all text-sm text-cream/80">{pixPayload.code}</pre>
                     <Button
                       className="mt-4 bg-gold hover:bg-gold/90 text-navy font-semibold px-4 py-2 rounded-full"
@@ -377,19 +384,7 @@ export default function CheckoutPage() {
                     ) : null}
                   </div>
                   <div className="mt-4 text-cream/70 text-sm">
-                    Após o pagamento, envie o comprovante para liberar o acesso.
-                    {whatsappLink ? (
-                      <div className="mt-3">
-                        <a
-                          href={whatsappLink}
-                          className="inline-flex items-center justify-center rounded-full border border-gold/40 px-4 py-2 text-cream hover:bg-gold/10"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Enviar comprovante no WhatsApp
-                        </a>
-                      </div>
-                    ) : null}
+                    A confirmação do pagamento é automática. Você receberá o acesso por email.
                   </div>
                 </div>
               ) : null}
