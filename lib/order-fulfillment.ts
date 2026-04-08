@@ -114,12 +114,7 @@ async function buildDownloadItems(order: {
   })
 }
 
-export async function handlePaidCharge(merchantChargeId: string) {
-  const order = await prisma.order.findFirst({
-    where: { paymentId: merchantChargeId },
-    include: { items: true },
-  })
-
+async function completeOrder(order: { id: number; customerEmail: string; customerName: string; paymentStatus: string; items: Array<{ productId: number; title: string; quantity: number }> }) {
   if (!order) {
     return { status: 'not_found' as const }
   }
@@ -147,6 +142,32 @@ export async function handlePaidCharge(merchantChargeId: string) {
   return { status: 'updated' as const }
 }
 
+export async function handlePaidCharge(merchantChargeId: string) {
+  const order = await prisma.order.findFirst({
+    where: { paymentId: merchantChargeId },
+    include: { items: true },
+  })
+
+  if (!order) {
+    return { status: 'not_found' as const }
+  }
+
+  return completeOrder(order)
+}
+
+export async function handlePaidOrderByPaymentId(paymentId: string) {
+  const order = await prisma.order.findFirst({
+    where: { paymentId },
+    include: { items: true },
+  })
+
+  if (!order) {
+    return { status: 'not_found' as const }
+  }
+
+  return completeOrder(order)
+}
+
 export async function handleOrderConfirmation(orderId: number) {
   const order = await prisma.order.findUnique({
     where: { id: orderId },
@@ -157,25 +178,5 @@ export async function handleOrderConfirmation(orderId: number) {
     return { status: 'not_found' as const }
   }
 
-  if (order.paymentStatus === 'completed') {
-    return { status: 'already_completed' as const }
-  }
-
-  const downloadItems: DownloadItem[] = await buildDownloadItems(order)
-
-  await prisma.order.update({
-    where: { id: order.id },
-    data: {
-      paymentStatus: 'completed',
-      orderStatus: 'delivered',
-    },
-  })
-
-  await sendDownloadEmail({
-    to: order.customerEmail,
-    name: order.customerName,
-    items: downloadItems,
-  })
-
-  return { status: 'updated' as const }
+  return completeOrder(order)
 }

@@ -76,7 +76,7 @@ export default function CheckoutPage() {
     }
 
     try {
-      const response = await fetch('/api/picpay/charge', {
+      const response = await fetch('/api/asaas/pix', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,10 +105,10 @@ export default function CheckoutPage() {
       setPixPayload({
         code: data.qrCode,
         amount: formatPrice(state.total),
-        expires: '15 minutos',
-        recipient: 'PicPay',
+        expires: data.expiresAt ? 'Até ' + new Date(data.expiresAt).toLocaleDateString('pt-BR') : '15 minutos',
+        recipient: 'Asaas',
         qrCodeBase64: data.qrCodeBase64,
-        merchantChargeId: data.merchantChargeId,
+        merchantChargeId: data.paymentId,
       })
       setCheckoutSuccess(true)
       setCopyMessage('')
