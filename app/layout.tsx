@@ -17,25 +17,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Marca & Mente Studio | Ebooks, Branding & Design Premium',
+  title: 'Nebula Studio',
   description: 'Plataforma premium com ebooks, sistemas de branding e soluções criativas personalizadas para posicionar sua marca, elevar autoridade e aumentar conversões.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 
