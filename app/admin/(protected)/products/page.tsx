@@ -7,22 +7,20 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge'
 import { Plus, Edit, Trash2, Eye } from 'lucide-react'
 import Link from 'next/link'
-import { ProductForm } from '@/components/admin/product-form'
+import { ProductForm, type ProductFormProduct } from '@/components/admin/product-form'
 import { DeleteConfirmDialog } from '@/components/admin/delete-confirm-dialog'
 import type { Product } from '@prisma/client'
 
-type ProductWithCategory = Omit<Product, 'price' | 'originalPrice'> & {
+type ProductWithCategory = ProductFormProduct & {
   categoryName: string
-  price: number | string
-  originalPrice: number | string
 }
 
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<ProductWithCategory[]>([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
-  const [editingProduct, setEditingProduct] = useState<Product | null>(null)
-  const [deleteProduct, setDeleteProduct] = useState<Product | null>(null)
+  const [editingProduct, setEditingProduct] = useState<ProductFormProduct | null>(null)
+  const [deleteProduct, setDeleteProduct] = useState<ProductWithCategory | null>(null)
 
   const fetchProducts = async () => {
     try {

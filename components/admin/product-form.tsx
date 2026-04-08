@@ -38,8 +38,13 @@ const productSchema = z.object({
 
 type ProductFormData = z.infer<typeof productSchema>
 
+export type ProductFormProduct = Omit<Product, 'price' | 'originalPrice'> & {
+  price: number | string
+  originalPrice: number | string | null
+}
+
 interface ProductFormProps {
-  product?: Product | null
+  product?: ProductFormProduct | null
   onSuccess: () => void
 }
 
