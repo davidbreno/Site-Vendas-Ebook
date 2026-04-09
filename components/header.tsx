@@ -75,18 +75,17 @@ export function Header() {
     }
   }, [])
 
-  const navText = isScrolled ? "text-navy/80" : "text-white/90"
+  const navText = "text-navy/80"
   const navHover = "hover:text-gold"
-  const iconText = isScrolled ? "text-navy/80" : "text-white/90"
-  const logoSrc = isScrolled ? "/logo-color.png" : "/logo-white.png"
-  const adminButtonClass = isScrolled
-    ? "border-navy/30 text-navy hover:bg-navy/5 hover:border-navy/50"
-    : "border-white/40 text-white hover:bg-white/10 hover:border-white/70"
+  const iconText = "text-navy/80"
+  const logoSrc = "/logo-color.png"
+  const adminButtonClass = "border-navy/25 text-navy hover:bg-cream/80 hover:border-navy/40"
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/20 shadow-[0_10px_30px_rgba(15,23,42,0.12)]"
-      style={{ backgroundColor: "rgba(15, 23, 42, 0.12)" }}
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-gold/20 shadow-[0_10px_30px_rgba(59,47,40,0.08)] transition-colors ${
+        isScrolled ? "bg-cream/95 backdrop-blur-md" : "bg-cream/80 backdrop-blur"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24 sm:h-28">

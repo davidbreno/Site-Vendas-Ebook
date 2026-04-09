@@ -44,10 +44,10 @@ export function ProductCatalog({ products, categories }: ProductCatalogProps) {
   )
 
   return (
-    <section className="relative py-12 lg:py-20 bg-white">
+    <section className="relative py-12 lg:py-20 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <p className="text-gold text-sm font-medium uppercase tracking-[0.3em]">
+          <p className="text-gold text-xs font-medium uppercase tracking-[0.35em]">
             Catálogo disponível
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy mt-4 leading-tight">

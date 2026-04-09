@@ -5,38 +5,38 @@
 
 :root {
   /* Marca & Mente Premium Color Palette */
-  --background: #FFFFFF;
-  --foreground: #2F4156;
-  --card: #F5EFEB;
-  --card-foreground: #2F4156;
-  --popover: #F5EFEB;
-  --popover-foreground: #2F4156;
-  --primary: #567C8D;
-  --primary-foreground: #F5EFEB;
-  --secondary: #C8D9E6;
-  --secondary-foreground: #2F4156;
-  --muted: #F5EFEB;
-  --muted-foreground: #567C8D;
-  --accent: #2F4156;
-  --accent-foreground: #F5EFEB;
+  --background: #F6EFE9;
+  --foreground: #3B2F28;
+  --card: #F9F3EB;
+  --card-foreground: #3B2F28;
+  --popover: #F9F3EB;
+  --popover-foreground: #3B2F28;
+  --primary: #B18463;
+  --primary-foreground: #FFF6ED;
+  --secondary: #E6D6C8;
+  --secondary-foreground: #3B2F28;
+  --muted: #EFE4D8;
+  --muted-foreground: #6B5447;
+  --accent: #3B2F28;
+  --accent-foreground: #FFF6ED;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #C8D9E6;
+  --border: #E0D0C2;
   --input: #FFFFFF;
-  --ring: #567C8D;
-  --chart-1: #567C8D;
-  --chart-2: #2F4156;
-  --chart-3: #C8D9E6;
-  --chart-4: #F5EFEB;
+  --ring: #B18463;
+  --chart-1: #B18463;
+  --chart-2: #3B2F28;
+  --chart-3: #E6D6C8;
+  --chart-4: #F9F3EB;
   --chart-5: #FFFFFF;
   --radius: 0.625rem;
   
   /* Custom luxury colors */
-  --gold: #C8A26E;
-  --navy: #2F4156;
-  --navy-light: #567C8D;
-  --cream: #F5EFEB;
-  --gray: #C8D9E6;
+  --gold: #C9A37A;
+  --navy: #3B2F28;
+  --navy-light: #6B5447;
+  --cream: #F6EFE9;
+  --gray: #E7DBD0;
 }
 
 @theme inline {
@@ -87,6 +87,10 @@
   body {
     @apply bg-background text-foreground;
     position: relative;
+    background-image:
+      radial-gradient(120% 80% at 20% 0%, rgba(255, 255, 255, 0.7) 0%, rgba(246, 239, 233, 0.6) 55%, rgba(246, 239, 233, 0.95) 100%),
+      radial-gradient(70% 50% at 80% 20%, rgba(201, 163, 122, 0.15) 0%, rgba(246, 239, 233, 0) 60%);
+    background-attachment: fixed;
   }
 
   body::before {

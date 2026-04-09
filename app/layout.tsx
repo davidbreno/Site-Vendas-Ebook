@@ -1,18 +1,20 @@
 ﻿import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Cormorant_Garamond, Manrope } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { CartProvider } from '@/components/cart/cart-context'
 
-const playfair = Playfair_Display({ 
+const playfair = Cormorant_Garamond({
   subsets: ["latin"],
   variable: '--font-serif',
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
-const inter = Inter({ 
+const inter = Manrope({
   subsets: ["latin"],
   variable: '--font-sans',
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
 });
 

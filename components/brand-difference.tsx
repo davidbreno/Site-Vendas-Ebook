@@ -37,10 +37,10 @@ const differences = [
 
 export function BrandDifference() {
   return (
-    <section id="branding" className="relative py-24 lg:py-32 bg-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/70 to-white" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/3 rounded-full blur-2xl" />
+    <section id="branding" className="relative py-24 lg:py-32 bg-cream overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-cream via-white/70 to-cream" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/8 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-2xl" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -81,7 +81,7 @@ export function BrandDifference() {
             {differences.map((item, index) => (
               <div
                 key={index}
-                className="group bg-cream border border-gold/25 rounded-xl p-6 hover:border-gold/30 hover:bg-cream/80 transition-all duration-300 animate-fade-in-up"
+                className="group bg-white/80 border border-gold/20 rounded-xl p-6 hover:border-gold/40 hover:bg-cream/70 shadow-[0_12px_40px_rgba(59,47,40,0.08)] transition-all duration-300 animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gold/20 transition-colors">

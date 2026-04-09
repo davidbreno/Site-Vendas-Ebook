@@ -29,7 +29,7 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <article className="group bg-cream border border-gold/25 rounded-2xl overflow-hidden hover:border-gold/30 transition-all duration-500">
+    <article className="group bg-white/85 border border-gold/20 rounded-2xl overflow-hidden hover:border-gold/40 shadow-[0_18px_60px_rgba(59,47,40,0.08)] transition-all duration-500">
       <div className="relative h-56 bg-gradient-to-br from-cream/60 to-white p-6 flex items-center justify-center">
         {product.imageUrl && !imageError ? (
           <img

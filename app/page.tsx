@@ -15,7 +15,7 @@ export default async function Home() {
   const featuredProducts = await getFeaturedProducts()
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-cream">
       <Header />
       <Hero />
       <Categories />

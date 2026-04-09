@@ -40,58 +40,42 @@ const categories = [
 
 export function Categories() {
   return (
-    <section id="catalogo" className="relative py-24 lg:py-32 bg-white">
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/70 to-white" />
-      
+    <section id="catalogo" className="relative py-20 lg:py-28 bg-cream">
+      <div className="absolute inset-0 bg-gradient-to-b from-cream via-cream to-white/70" />
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <span className="text-gold text-sm font-medium tracking-widest uppercase">
+        <div className="text-center mb-12 animate-fade-in-up">
+          <span className="text-gold text-xs font-medium tracking-[0.35em] uppercase">
             Categorias
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy mt-4 text-balance">
             Encontre o que sua marca precisa
           </h2>
-          <p className="text-navy/70 text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-navy/70 text-base sm:text-lg mt-4 max-w-2xl mx-auto">
             Produtos e serviços premium organizados para você encontrar a solução perfeita.
           </p>
         </div>
 
-        {/* Category Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category, index) => (
-            <Link
-              key={index}
-              href={category.href}
-              className="group relative block bg-cream border border-gold/25 rounded-2xl p-8 hover:border-gold/30 transition-all duration-500 cursor-pointer overflow-hidden animate-fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              <div className="relative">
-                <div className="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gold/20 group-hover:scale-110 transition-all duration-300">
-                  <category.icon className={`w-7 h-7 ${category.iconColor}`} />
+        {/* Category Strip */}
+        <div className="rounded-[2rem] border border-gold/25 bg-white/80 shadow-[0_18px_60px_rgba(59,47,40,0.08)] backdrop-blur">
+          <div className="grid md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gold/20">
+            {categories.map((category, index) => (
+              <Link
+                key={index}
+                href={category.href}
+                className="group flex items-center gap-4 px-6 py-6 text-left transition-colors hover:bg-cream/60"
+              >
+                <div className="w-11 h-11 bg-gold/10 rounded-full flex items-center justify-center shrink-0">
+                  <category.icon className={`w-5 h-5 ${category.iconColor}`} />
                 </div>
-                
-                <h3 className="text-navy font-semibold text-xl mb-3">
-                  {category.title}
-                </h3>
-                
-                <p className="text-navy/70 text-sm leading-relaxed">
-                  {category.description}
-                </p>
-
-                {/* Hover Arrow */}
-                <div className="mt-6 flex items-center text-gold text-sm font-medium opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
-                  Ver produtos
-                  <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                <div>
+                  <div className="text-navy font-semibold">{category.title}</div>
+                  <div className="text-navy/60 text-sm">{category.description}</div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

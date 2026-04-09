@@ -8,9 +8,9 @@ export function FinalCTA() {
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cream via-white to-cream" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gold/5 rounded-full blur-2xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cream via-white/70 to-cream" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/12 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gold/6 rounded-full blur-2xl" />
       
       {/* Border Glow */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
@@ -38,7 +38,7 @@ export function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Button
               size="lg"
-              className="bg-gold hover:bg-gold/90 text-navy font-semibold px-10 py-6 rounded-full flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-gold/20 text-lg"
+              className="bg-navy hover:bg-navy/90 text-cream font-semibold px-10 py-6 rounded-full flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-navy/20 text-lg"
               asChild
             >
               <a href="#catalogo">
@@ -49,7 +49,7 @@ export function FinalCTA() {
             <Button
               size="lg"
               variant="outline"
-              className="border-navy/25 bg-cream text-navy hover:bg-cream/90 hover:border-navy/40 px-10 py-6 rounded-full flex items-center gap-2 transition-all duration-300 text-lg"
+              className="border-navy/25 bg-white/80 text-navy hover:bg-cream/80 hover:border-navy/40 px-10 py-6 rounded-full flex items-center gap-2 transition-all duration-300 text-lg"
               asChild
             >
               <a href={getWhatsappLink()} target="_blank" rel="noopener noreferrer">

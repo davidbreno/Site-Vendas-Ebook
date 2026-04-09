@@ -28,13 +28,13 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative py-24 lg:py-32 bg-white">
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/60 to-white" />
+    <section className="relative py-24 lg:py-32 bg-cream">
+      <div className="absolute inset-0 bg-gradient-to-b from-cream via-white/70 to-cream" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <span className="text-gold text-sm font-medium tracking-widest uppercase">
+          <span className="text-gold text-xs font-medium tracking-[0.35em] uppercase">
             Depoimentos
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy mt-4 text-balance">
@@ -50,7 +50,7 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group relative bg-cream border border-gold/25 rounded-2xl p-8 hover:border-gold/30 transition-all duration-500 animate-fade-in-up"
+              className="group relative bg-white/80 border border-gold/20 rounded-2xl p-8 hover:border-gold/40 shadow-[0_16px_50px_rgba(59,47,40,0.08)] transition-all duration-500 animate-fade-in-up"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Quote Icon */}

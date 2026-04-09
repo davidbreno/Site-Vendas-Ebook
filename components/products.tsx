@@ -9,13 +9,13 @@ interface ProductsProps {
 
 export function Products({ products }: ProductsProps) {
   return (
-    <section className="relative py-24 lg:py-32 bg-white">
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/70 to-white" />
+    <section className="relative py-24 lg:py-32 bg-cream">
+      <div className="absolute inset-0 bg-gradient-to-b from-cream via-white/60 to-cream" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <span className="text-gold text-sm font-medium tracking-widest uppercase">
+          <span className="text-gold text-xs font-medium tracking-[0.35em] uppercase">
             Produtos em Destaque
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-navy mt-4 text-balance">
@@ -40,7 +40,7 @@ export function Products({ products }: ProductsProps) {
           <Button
             size="lg"
             variant="outline"
-            className="border-navy/25 bg-cream text-navy hover:bg-cream/90 hover:border-navy/40 px-8 py-6 rounded-full"
+            className="border-navy/25 bg-white/80 text-navy hover:bg-cream/80 hover:border-navy/40 px-8 py-6 rounded-full"
             asChild
           >
             <Link href="/products">Ver todos os produtos</Link>
