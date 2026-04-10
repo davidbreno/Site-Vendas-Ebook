@@ -10,7 +10,19 @@ export function Hero() {
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{ backgroundImage: "url('/images/hero-topo.png.png')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/60 via-cream/45 to-cream/70" />
+        <div
+          className="absolute inset-0 opacity-90"
+          style={{
+            background: "linear-gradient(135deg, #F5EEE6, #E8D9C8, #D7BEA8)",
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-30 mix-blend-multiply"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 20%, rgba(90, 70, 55, 0.08) 0, rgba(90, 70, 55, 0) 55%), radial-gradient(circle at 80% 10%, rgba(90, 70, 55, 0.06) 0, rgba(90, 70, 55, 0) 50%), radial-gradient(circle at 30% 80%, rgba(90, 70, 55, 0.05) 0, rgba(90, 70, 55, 0) 60%), repeating-linear-gradient(135deg, rgba(90, 70, 55, 0.06) 0, rgba(90, 70, 55, 0.06) 1px, rgba(90, 70, 55, 0) 1px, rgba(90, 70, 55, 0) 5px)",
+          }}
+        />
         <div className="absolute inset-0 bg-[radial-gradient(70%_50%_at_20%_10%,rgba(201,163,122,0.22)_0%,rgba(246,239,233,0)_60%)]" />
       </div>
 
